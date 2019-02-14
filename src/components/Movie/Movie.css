@@ -1,0 +1,20 @@
+*{
+  color: red;
+}
+
+.movie{
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.poster1{
+  width: 270px;
+  box-shadow: 1px 1px 2px red;
+}
+
+.center{
+  width: 40%;
+  text-align: center;
+  position: relative;
+  left: 28%;
+}

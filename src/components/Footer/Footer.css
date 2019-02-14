@@ -1,0 +1,14 @@
+.Name{
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  margin-right: 50px;
+  font-size: 24px;
+}
+
+.footer{
+  height: 60px;
+  width: 100%;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+}

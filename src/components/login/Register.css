@@ -1,0 +1,49 @@
+.Register{
+  font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: red;
+  height: 100vh;
+  text-align: center;
+}
+
+.regInput{
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 41%;
+  margin: 20px;
+  justify-content: space-between;
+}
+
+.titleReg{
+  position: absolute;
+  top: 20%;
+  left: 46%;
+  font-size: 28px;
+  color: red;
+  z-index: 2;
+}
+
+.input{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+}
+
+.input2{
+  position: relative;
+  top: 65%;
+  justify-content: center;
+  font-size: 18px;
+  top: 200px;
+  background: black;
+  border:2px solid red;
+  color: red;
+  margin: 20px;
+}
+
+.input2:hover{
+  background: red;
+  color: black;
+}
