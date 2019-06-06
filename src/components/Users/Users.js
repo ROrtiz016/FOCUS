@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import NavBar from '../NavBar/NavBar'
 
 class Users extends Component{
   constructor(){
@@ -44,7 +45,8 @@ class Users extends Component{
 
     return(
       <div>
-        Look for other Movie Fans 
+        <NavBar/>
+        <h3>Look for other Movie Fans</h3> 
         <input type="text" onChange={this.inputHandler}/>
         <button onClick={this.sendInfo}>ENTER</button>
 

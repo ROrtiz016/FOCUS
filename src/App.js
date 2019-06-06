@@ -6,7 +6,7 @@ import Register from './components/login/Register'
 import Movies from './components/Movies/Movies'
 import Movie from './components/Movie/Movie'
 import Users from './components/Users/Users'
-import MovieList from './components/Movies/MovieList'
+import Genres from './components/Genres/Genres'
 import './App.css'
 import './reset.css'
 
@@ -15,13 +15,13 @@ class App extends Component {
     return (
       <HashRouter>
         <Switch>
-          <Route path='/' component={Login} exact/>
-          <Route path='/home' component={Home}/>
-          <Route path='/register' component={Register}/>
+          <Route path='/login' component={Login}/>
+          <Route path='/' exact component={Home}/>
           <Route path='/movies' exact component={Movies}/>
+          <Route path='/register' component={Register}/>
           <Route path='/movies/:id' component={Movie}/>
           <Route path='/users' component={Users}/>
-          <Route path='/List' component={MovieList}/>
+          <Route path='/Genres' component={Genres}/>
         </Switch>
       </HashRouter>
     );

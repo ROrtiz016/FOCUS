@@ -14,19 +14,19 @@ class NavBar extends Component{
     return(
       <div className='NavBar'>
         <div>
-          <Link to='/users'><p>Users</p></Link>
-        </div>
-        <div>
-          <h2>now playing</h2>
+          <Link to='/movies'>Movies</Link>
         </div>
 
         <div>
-          <h2>genre</h2>
+          <Link to='/Genres' >Genres</Link>
         </div>
 
         <div>
-          <h2>search</h2>
-          <input type="text"/>
+          <Link to='/Login'>Login</Link>
+        </div>
+
+        <div>
+          <h2>Search <input type="text" /></h2>
         </div>
       </div>
     )

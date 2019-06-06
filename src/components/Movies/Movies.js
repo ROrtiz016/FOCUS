@@ -10,54 +10,53 @@ class Movies extends Component {
     super()
     this.state = {
       movies: [],
-      page: 1
+      page: 1,
+      key: 'ad985d74904d27ff507c1eeca723dc4e'
     }
   }
 
   componentDidMount() {
-    axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=ad985d74904d27ff507c1eeca723dc4e&language=en-US&page=' + this.state.page).then(res => this.setState({
+    axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.state.key}&language=en-US&page=` + this.state.page).then(res => this.setState({
       movies: res.data.results
     }))
   }
 
   pageHandlerNext(){
     this.setState({
-      page: 2
+      page: this.state.page + 1
     })
+    axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.state.key}&language=en-US&page=` + this.state.page).then(res => this.setState({
+      movies: res.data.results,
+    }))
+  }
+
+  pageHandlerPrev(){
+    if(this.state.page !== 1){
+      this.setState({
+        page: this.state.page -1
+      })
+      axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.state.key}&language=en-US&page=` + this.state.page).then(res => this.setState({
+        movies: res.data.results
+      }))
+    }
+  }
+
+  handleTopRated = () => {
+    axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${this.state.key}&language=en-US&page=${this.state.page}`).then(res => this.setState({
+      movies: res.data.results
+    })
+    )
   }
   
-//   nextPage() {
-//     let { page } = this.state;
-//     if (!page + 1) {
-//         axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad985d74904d27ff507c1eeca723dc4e&language=en-US&page= + ${page}`)
-//             .then(res => {
-//                 if (res.data[0]) {
-//                     this.setState({
-//                         page: page + 1
-//                     })
-//                 }
-//             })
-//             .catch(console.error);
-//     } else if (!page + 1) {
-//         axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad985d74904d27ff507c1eeca723dc4e&language=en-US&page= + ${page}`)
-//             .then(res => {
-//                 console.log(res.data);
-//                 if (res.data[0]) {
-//                     this.setState({
-//                         page: page + 1
-//                     })
-//                 }
-//             })
-//             .catch(console.error);
-//     } else {
-//         this.setState({
-//             page: page + 1
-//         })
-//     }
-// }
+  handleNowPlaying = () => {
+    axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.state.key}&language=en-US&page=` + this.state.page).then(res => this.setState({
+      movies: res.data.results
+    }))
+  }
 
 
   render() {
+    console.log(this.state.movies)
     let nowPlaying = this.state.movies.map((el) => {
       let poster = `https://image.tmdb.org/t/p/w200` + el.poster_path;
       return (
@@ -72,14 +71,20 @@ class Movies extends Component {
     return (
       <div>
         <NavBar />
+        <div className='container'>
         <h1 className='title'>Now Playing...</h1>
-        {console.log(this.state.movies)}
+        <button onClick={this.handleNowPlaying}>NOW PLAYING...</button>
+        <button onClick={this.handleTopRated}>TOP RATED</button>
+        <button></button>
+
         <div className='movies'>
           {nowPlaying}
         </div>
 
         <div className='buttons'>
-        <button onClick={() => this.pageHandlerNext} className='btnNext'>Next</button>
+        <button onClick={this.pageHandlerPrev.bind(this)} className='btnNext'>Prev</button>
+        <button onClick={this.pageHandlerNext.bind(this)} className='btnNext'>Next</button>
+        </div>
         </div>
 
         <Footer />
