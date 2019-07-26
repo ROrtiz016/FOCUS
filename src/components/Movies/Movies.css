@@ -4,9 +4,12 @@
 
 .title {
   font-family: 'Courier New', Courier, monospace;
-  color: red;
+  color: white;
   font-size: 24px;
   margin: 20px;
+  animation-name: slide-title;
+  animation-duration: 1s;
+  position: relative;
 }
 
 .movies{
@@ -20,21 +23,30 @@
   width: 250px;
   overflow:hidden;
   font-family: 'Courier New', Courier, monospace;
-  color: red;
+  color: white;
   margin-left: 15px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .releaseDate{
-  color: red;
+  color: white;
   font-family: 'Courier New', Courier, monospace;
   margin-left: 15px;
   font-size: 12px;
+  margin-bottom: 55px;
 }
 
 .poster{
   margin: 15px;
-  margin-bottom: 55px;
+  animation-name: slide-in;
+  animation-duration: 1.5s;
+  position: relative;
+  transition: .8s;
+}
+
+.poster:hover{
+  transform: scale(1.1);
+  transition: 1s;
 }
 
 .buttons{
@@ -63,3 +75,13 @@
   position: relative;
   left: 16%;
 }
+
+@keyframes slide-in{
+  0%{top: 50px; opacity: 0;}
+  100%{top: 0px; opacity: 1;}
+ }
+
+ @keyframes slide-title{
+   0%{left: 120px; opacity: 0}
+   100%{left: 0px; opacity: 1}
+ }

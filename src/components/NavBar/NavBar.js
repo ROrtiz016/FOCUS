@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './NavBar.css'
 import {Link} from 'react-router-dom'
+import Lens from './camera-lens.png'
 
 class NavBar extends Component{
   constructor(){
@@ -13,12 +14,21 @@ class NavBar extends Component{
   render(){
     return(
       <div className='NavBar'>
-        <div>
-          <Link to='/movies'>Movies</Link>
+        <div className='logo-container'>
+         <img src={Lens} alt="" className='logo'/>
+         <h1>FOCUS</h1>
         </div>
 
         <div>
-          <Link to='/Genres' >Genres</Link>
+          <Link to='/'>Movies</Link>
+        </div>
+
+        <div>
+          <Link to='/Series'>Series</Link>
+        </div>
+
+        <div>
+          
         </div>
 
         <div>

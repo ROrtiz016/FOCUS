@@ -11,3 +11,26 @@
   align-items: center
 }
 
+.fas{
+  font-size: 48px;
+  color: gold;
+}
+
+.logo{
+  height: 60px;
+  margin-right: 20px;
+  animation-name: logoSpin;
+  animation-duration: 2s;
+}
+.logo-container{
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+}
+
+@keyframes logoSpin{
+  0%{transform: rotate(0deg)}
+  25%{transform: rotate(90deg)}
+  50%{transform: rotate(180deg)}
+  100%{transform: rotate(360deg)}
+}

@@ -1,20 +1,102 @@
 *{
-  color: red;
+  color: white;
 }
 
 .movie{
-  color: red;
-  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-family: 'Prompt', sans-serif;
+  font-weight: bolder;
+  font-size: 34px;
+  margin-bottom: 15px;
+  animation-name: fade-in;
+  animation-duration: 1s;
 }
 
 .poster1{
-  width: 270px;
-  box-shadow: 1px 1px 2px red;
+  width: 300px;
+  box-shadow: 2px 2px 2px white;
+  margin: 150px;
+  animation-name: slidePoster;
+  animation-duration: 1s;
+  position: relative;
 }
 
 .center{
   width: 40%;
-  text-align: center;
   position: relative;
-  left: 28%;
+}
+
+.Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview{
+  color: white;
+  font-family: 'Prompt', sans-serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.input-name{
+  height: 30px;
+  font-size: 20px;
+  margin-bottom: 50px;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.input-text{
+  height: 200px;
+  width: 400px;
+  text-align: left;
+  font-size: 20px;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.review-container{
+  margin-bottom: 20px;
+  margin-top: 50px;
+  font-size: 20px;
+  font-family: 'Prompt', sans-serif;
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+
+.give-review{
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: 'Prompt', sans-serif;
+}
+
+.fa-star{
+  color: white;
+  font-size: 26px;
+}
+
+.fas:hover{
+  color: gold
+}
+
+.genre{
+  display: flex;
+  width: auto;
+  height: 30px;
+  justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Prompt', sans-serif;
+}
+
+@keyframes slidePoster{
+  0%{right: 150px; opacity: 0}
+  100%{right: 0px; opacity: 1;}
+}
+
+@keyframes fade-in{
+  0%{opacity: 0}
+  100%{opacity: 1}
 }
