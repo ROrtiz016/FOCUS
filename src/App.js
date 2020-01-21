@@ -19,7 +19,6 @@ class App extends Component {
           <Route path='/register' component={Register}/>
           <Route path='/movies/:id' component={Movie}/>
           <Route path='/Series' component={Series}/>
-          
         </Switch>
       </HashRouter>
     );
